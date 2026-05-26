@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kalpataru Mindset Transformation Program by Shakti Awakens for students, youth, and conscious parents." />
+  <title>Kalpataru Mindset Transformation Program | Shakti Awakens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-soft: #faf8f3;
+      --text: #171512;
+      --muted: #6f6a61;
+      --line: #ebe5da;
+      --champagne: #b8944f;
+      --champagne-dark: #87682f;
+      --sage: #738276;
+      --ink: #171512;
+      --shadow: 0 24px 80px rgba(31, 26, 18, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Lato", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.form-open {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, #1f1a13, #090807);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.16);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(31, 26, 18, 0.07);
+    }
+
+    .btn-secondary:hover {
+      border-color: #d5c39e;
+      background: #fff;
+    }
+
+    .hero {
+      min-height: 0;
+      padding: 76px 0 72px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Lato", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(42px, 5.8vw, 72px);
+      line-height: 1.04;
+      margin-bottom: 22px;
+      margin-inline: auto;
+      color: #141414;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #997331, #6f8173);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 21px);
+      line-height: 1.68;
+      margin-bottom: 30px;
+      margin-inline: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-visual-frame {
+      position: relative;
+      width: min(100%, 560px);
+      min-height: 660px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 0 70px;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 390px);
+      height: 550px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 8px solid #fff;
+      background: var(--surface);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 62%, rgba(35, 28, 17, 0.18));
+    }
+
+    .student-shot {
+      position: absolute;
+      z-index: 3;
+      border: 6px solid #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 18px 54px rgba(31, 26, 18, 0.16);
+    }
+
+    .student-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .student-shot.one {
+      top: 32px;
+      left: 0;
+      width: 190px;
+      aspect-ratio: 4 / 3;
+      transform: rotate(-4deg);
+    }
+
+    .student-shot.two {
+      top: 4px;
+      right: 18px;
+      width: 165px;
+      aspect-ratio: 3 / 4;
+      transform: rotate(4deg);
+    }
+
+    .student-shot.three {
+      left: 10px;
+      bottom: 86px;
+      width: 215px;
+      aspect-ratio: 16 / 10;
+      transform: rotate(3deg);
+    }
+
+    .student-shot.four {
+      right: 0;
+      bottom: 18px;
+      width: 230px;
+      aspect-ratio: 16 / 10;
+      transform: rotate(-2deg);
+    }
+
+    .student-shot.five {
+      right: -4px;
+      top: 246px;
+      width: 150px;
+      aspect-ratio: 3 / 4;
+      transform: rotate(5deg);
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 34px;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 570px;
+      line-height: 1.7;
+      font-size: 17px;
+      margin-inline: auto;
+    }
+
+    .section-kicker {
+      color: var(--champagne-dark);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .problem-grid,
+    .coach-grid,
+    .audience-grid {
+      display: grid;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .problem-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+      align-items: start;
+    }
+
+    .problem-panel,
+    .audience-card,
+    .coach-copy {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: none;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .problem-panel.primary {
+      text-align: left;
+      padding: 38px;
+    }
+
+    .problem-panel.primary h3 {
+      font-size: clamp(30px, 3vw, 40px);
+      line-height: 1.12;
+    }
+
+    .problem-panel.primary p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .problem-panel.primary .urgency-note {
+      text-align: left;
+    }
+
+    .problem-panel h3,
+    .audience-card h3,
+    .coach-copy h3 {
+      color: var(--ink);
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .problem-panel p,
+    .coach-copy p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .pain-list,
+    .check-list {
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+
+    .problem-panel .pain-list {
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .pain-list li,
+    .check-list li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--muted);
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .pain-list li::before,
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--champagne), var(--sage));
+      box-shadow: 0 0 0 5px rgba(198, 163, 91, 0.12);
+    }
+
+    .urgency-note {
+      margin-top: 22px;
+      padding: 20px 22px;
+      border: 1px solid #eadfc9;
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .coach-grid {
+      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+    }
+
+    .coach-photo {
+      height: 560px;
+      border: 8px solid #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .coach-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .recognition-photo {
+      min-height: 360px;
+      border: 8px solid #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .recognition-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .recognition-person img {
+      object-position: center;
+    }
+
+    .awards-showcase {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: center;
+      min-height: 360px;
+    }
+
+    .awards-head {
+      padding: 22px 24px 10px;
+      text-align: center;
+    }
+
+    .awards-head h3 {
+      color: var(--ink);
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .awards-head p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .awards-carousel {
+      overflow: hidden;
+      padding: 14px 0 24px;
+    }
+
+    .awards-track {
+      display: flex;
+      width: max-content;
+      gap: 14px;
+      animation: awards-slide 42s linear infinite;
+    }
+
+    .awards-carousel:hover .awards-track {
+      animation-play-state: paused;
+    }
+
+    .award-slide {
+      width: 210px;
+      height: 250px;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .award-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @keyframes awards-slide {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .authority-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .authority-strip span {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .final-copy {
+      max-width: 760px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .microcopy {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin-top: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 30px 24px;
+      background: #fff;
+      min-height: 230px;
+      box-shadow: none;
+      text-align: center;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: #d6c295;
+      box-shadow: 0 18px 48px rgba(31, 26, 18, 0.08);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--champagne), var(--sage));
+      margin: 0 auto 20px;
+      font-weight: 800;
+    }
+
+    .service h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .service p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .journey {
+      background: #fff;
+      border-block: 1px solid var(--line);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      counter-reset: steps;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 24px;
+      box-shadow: 0 14px 34px rgba(31, 26, 18, 0.06);
+    }
+
+    .step::before {
+      counter-increment: steps;
+      content: "0" counter(steps);
+      display: block;
+      color: var(--champagne-dark);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .cta-band {
+      border: 1px solid #dfd1b5;
+      border-radius: 10px;
+      padding: 54px 42px;
+      background: #fff;
+      box-shadow: 0 24px 70px rgba(31, 26, 18, 0.07);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .cta-band p {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-inline: auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-panel,
+    .form-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: none;
+      padding: 34px;
+      text-align: center;
+    }
+
+    .contact-panel h3,
+    .form-panel h3 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      color: var(--ink);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      color: var(--muted);
+      margin: 22px 0 26px;
+      justify-items: center;
+    }
+
+    .contact-list a {
+      color: var(--champagne-dark);
+      font-weight: 700;
+    }
+
+    .booking-card {
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      min-height: 100%;
+      text-align: center;
+    }
+
+    .booking-card p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .form-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(23, 23, 23, 0.54);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .form-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .form-dialog {
+      width: min(760px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 30px 90px rgba(17, 17, 17, 0.28);
+      transform: translateY(14px);
+      transition: transform 0.2s ease;
+    }
+
+    .form-modal.open .form-dialog {
+      transform: translateY(0);
+    }
+
+    .form-modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .form-modal-head h3 {
+      color: var(--ink);
+      font-size: 24px;
+    }
+
+    .form-close {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 26px;
+      line-height: 1;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .form-close:hover {
+      transform: translateY(-1px);
+      border-color: #d5c39e;
+    }
+
+    .google-form {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 134px);
+      min-height: 520px;
+      border: 0;
+      background: #fff;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      background: #fff;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .contact-grid,
+      .problem-grid,
+      .coach-grid,
+      .recognition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-panel.primary,
+      .problem-panel.primary .urgency-note {
+        text-align: center;
+      }
+
+      .visual {
+        min-height: 0;
+      }
+
+      .hero-photo {
+        left: auto;
+        transform: none;
+        width: min(460px, 100%);
+        height: 570px;
+      }
+
+      .hero-visual-frame {
+        width: min(100%, 560px);
+        min-height: 680px;
+      }
+
+      .services-grid,
+      .steps,
+      .pillars-grid,
+      .audience-grid,
+      .authority-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-band {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .services-grid,
+      .steps,
+      .pillars-grid,
+      .audience-grid,
+      .authority-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .visual {
+        min-height: 0;
+      }
+
+      .hero-photo {
+        width: min(100%, 390px);
+        height: 500px;
+      }
+
+      .hero-visual-frame {
+        min-height: 760px;
+        padding: 0 0 250px;
+      }
+
+      .student-shot {
+        transform: none;
+      }
+
+      .student-shot.one {
+        top: auto;
+        left: 0;
+        bottom: 120px;
+        width: calc(50% - 8px);
+      }
+
+      .student-shot.two {
+        top: auto;
+        right: 0;
+        bottom: 120px;
+        width: calc(50% - 8px);
+        aspect-ratio: 4 / 3;
+      }
+
+      .student-shot.three {
+        left: 0;
+        bottom: 0;
+        width: calc(33.333% - 9px);
+      }
+
+      .student-shot.four {
+        right: auto;
+        left: calc(33.333% + 4px);
+        bottom: 0;
+        width: calc(33.333% - 9px);
+      }
+
+      .student-shot.five {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: calc(33.333% - 9px);
+        aspect-ratio: 16 / 10;
+      }
+
+      .coach-photo {
+        height: 420px;
+      }
+
+      .recognition-photo {
+        min-height: 300px;
+      }
+
+      .award-slide {
+        width: 185px;
+        height: 225px;
+      }
+
+      .cta-band,
+      .contact-panel,
+      .form-panel {
+        padding: 24px;
+      }
+
+      .form-modal {
+        padding: 10px;
+      }
+
+      .form-dialog {
+        max-height: calc(100vh - 20px);
+      }
+
+      .google-form {
+        height: calc(100vh - 114px);
+        min-height: 460px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <h1>Build focus, confidence, and discipline with <span class="gradient-text">Kalpataru.</span></h1>
+          <p class="hero-copy">
+            A mindset transformation program for students struggling with screen addiction, exam anxiety, low confidence,
+            and lack of direction.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
+          </div>
+        </div>
+
+        <div class="visual reveal">
+          <div class="hero-visual-frame">
+            <div class="hero-photo">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.06.08 AM.jpeg" alt="Coach Sunita Kumari" />
+            </div>
+            <div class="student-shot one">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.01.11 AM (4).jpeg" alt="Coach Sunita Kumari speaking with students" />
+            </div>
+            <div class="student-shot two">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.01.12 AM (1).jpeg" alt="Coach Sunita Kumari with school leadership" />
+            </div>
+            <div class="student-shot three">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.01.11 AM (8).jpeg" alt="Coach Sunita Kumari with students and teachers" />
+            </div>
+            <div class="student-shot four">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.01.10 AM.jpeg" alt="Students attending Coach Sunita Kumari session" />
+            </div>
+            <div class="student-shot five">
+              <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.06.09 AM (1).jpeg" alt="Students in a live mindset session" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="problem">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">The modern student crisis</div>
+            <h2>Your child is not lazy. Their mind is overloaded.</h2>
+            <p>Students are not only competing with exams. They are competing with reels, shorts, gaming, notifications, comparison, and constant digital stimulation.</p>
+          </div>
+        </div>
+
+        <div class="problem-grid">
+          <div class="problem-panel primary reveal">
+            <h3>The real issue is mental fitness.</h3>
+            <p>
+              Every scroll gives the brain a quick dopamine hit. Every short video trains the mind to avoid deep focus.
+              Slowly, studying feels boring, discipline feels heavy, and even bright students begin to feel stuck.
+            </p>
+            <div class="urgency-note">Academic success is impossible without focus, emotional strength, digital discipline, and inner confidence.</div>
+          </div>
+
+          <div class="problem-panel reveal">
+            <h3>What families are seeing every day</h3>
+            <ul class="pain-list">
+              <li>Doomscrolling late into the night and losing control over screen time.</li>
+              <li>Short attention spans, poor concentration, and difficulty completing study sessions.</li>
+              <li>Exam anxiety, fear of failure, overthinking, and emotional pressure.</li>
+              <li>Low confidence despite obvious potential and intelligence.</li>
+              <li>No clear direction for career, purpose, values, or life decisions.</li>
+              <li>Anger, withdrawal, comparison, and motivation that disappears too quickly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" id="program">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">The solution</div>
+            <h2>Introducing the Kalpataru Mindset Transformation Program</h2>
+            <p>An elite, structured pathway to help students break free from digital chaos and grow into focused, confident, emotionally strong achievers.</p>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="service reveal">
+            <div class="service-icon">01</div>
+            <h3>Brain Rewiring &amp; Digital Detox</h3>
+            <p>Understand dopamine loops, screen triggers, and how to regain control over reels, shorts, gaming, and scrolling without shame.</p>
+          </article>
+          <article class="service reveal">
+            <div class="service-icon">02</div>
+            <h3>Laser Focus &amp; Study Discipline</h3>
+            <p>Build deep concentration, reduce procrastination, and create a daily rhythm that makes study time more consistent.</p>
+          </article>
+          <article class="service reveal">
+            <div class="service-icon">03</div>
+            <h3>Exam Confidence &amp; Emotional Strength</h3>
+            <p>Train the mind to stay calm under pressure, handle fear of failure, and perform with steadiness during exams.</p>
+          </article>
+          <article class="service reveal">
+            <div class="service-icon">04</div>
+            <h3>Purpose, Confidence &amp; Inner Shakti</h3>
+            <p>Reconnect students with their strengths, values, and direction so they stop feeling lost and start moving with self-belief.</p>
+          </article>
+        </div>
+
+        <div class="urgency-note reveal">Kalpataru is not just a seminar. It is the beginning of a mindset movement for students who are ready to rise.</div>
+      </div>
+    </section>
+
+    <section class="section" id="coach">
+      <div class="container coach-grid">
+        <div class="recognition-grid reveal">
+          <div class="recognition-photo recognition-person">
+            <img src="Sunita- Gallery/WhatsApp Image 2026-05-08 at 7.08.54 AM (1).jpeg" alt="Coach Sunita Kumari" />
+          </div>
+          <div class="awards-showcase" aria-label="Coach Sunita Kumari awards and recognition carousel">
+            <div class="awards-head">
+              <h3>Awards &amp; Recognition</h3>
+              <p>A glimpse of Coach Sunita Kumari's honors, certificates, and recognition moments.</p>
+            </div>
+            <div class="awards-carousel">
+              <div class="awards-track">
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_133209.png" alt="Coach Sunita Kumari award certificate" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_134629.png" alt="Coach Sunita Kumari award recognition" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_155832.png" alt="Coach Sunita Kumari certificate recognition" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_160010.png" alt="Coach Sunita Kumari honor certificate" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.32.41 PM.jpeg" alt="Coach Sunita Kumari award moment" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.33.14 PM.jpeg" alt="Coach Sunita Kumari recognition moment" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.33.14 PM2.jpeg" alt="Coach Sunita Kumari recognition event" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_133209.png" alt="Coach Sunita Kumari award certificate" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_134629.png" alt="Coach Sunita Kumari award recognition" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_155832.png" alt="Coach Sunita Kumari certificate recognition" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/IMG_20260525_160010.png" alt="Coach Sunita Kumari honor certificate" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.32.41 PM.jpeg" alt="Coach Sunita Kumari award moment" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.33.14 PM.jpeg" alt="Coach Sunita Kumari recognition moment" loading="lazy" /></div>
+                <div class="award-slide"><img src="Sunita Awards/WhatsApp Image 2026-05-25 at 4.33.14 PM2.jpeg" alt="Coach Sunita Kumari recognition event" loading="lazy" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="coach-copy reveal">
+          <div class="section-kicker">About the coach</div>
+          <h3>Meet Coach Sunita Kumari, the woman behind Shakti Awakens.</h3>
+          <p>
+            Coach Sunita Kumari is an International Mindset Coach from Bihar, known for her inspiring journey from
+            Gaya to global platforms in the USA. Her life is a living example of what she teaches: courage,
+            discipline, emotional strength, and transformation.
+          </p>
+          <p>
+            Through Shakti Awakens, she guides students, youth, women, and families to rebuild confidence, mental
+            discipline, and life direction. Parents trust her because she does not only motivate students; she helps
+            them rebuild their mindset from the inside.
+          </p>
+          <div class="authority-strip" aria-label="Coach Sunita Kumari recognition">
+            <span>International Mindset Coach</span>
+            <span>Aadi-Shakti Samman</span>
+            <span>Prerna-Punj Samman</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" id="audience">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Who this is for</div>
+            <h2>For students who want to lead, and parents who want to see them rise.</h2>
+            <p>If you are tired of watching potential get buried under distraction, pressure, and confusion, this program was built for your family.</p>
+          </div>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card reveal">
+            <h3>Students who want to lead their life</h3>
+            <ul class="check-list">
+              <li>Want to reduce screen addiction and take control of scrolling.</li>
+              <li>Struggle to focus while studying or completing daily work.</li>
+              <li>Feel anxious before exams and afraid of failure.</li>
+              <li>Want better confidence, self-discipline, and emotional control.</li>
+              <li>Feel confused about career, purpose, or future direction.</li>
+              <li>Know they have potential but are unable to use it fully.</li>
+            </ul>
+          </article>
+
+          <article class="audience-card reveal">
+            <h3>Parents who want conscious guidance</h3>
+            <ul class="check-list">
+              <li>Feel worried about excessive mobile use and poor routine.</li>
+              <li>Notice declining focus, confidence, motivation, or calmness.</li>
+              <li>Want discipline without constant shouting or emotional conflict.</li>
+              <li>Are concerned about exam stress and pressure on their child.</li>
+              <li>Want support beyond tuition, marks, and surface-level motivation.</li>
+              <li>Believe education should build character, courage, and clarity.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>Your child’s mindset can change. The first step starts now.</h2>
+            <p>Fill the Google Form to claim your free seminar slot and receive details for the exclusive WhatsApp community.</p>
+          </div>
+          <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-panel reveal">
+          <h3>Join the Kalpataru Seminar Pathway</h3>
+          <p class="hero-copy">Every day a student remains trapped in distraction, self-doubt, and emotional pressure, confidence becomes weaker. With the right guidance, the same student can become focused, disciplined, confident, and deeply aware of their own power.</p>
+          <div class="contact-list">
+            <p>Email: theshaktiawakens@gmail.com</p>
+            <p>Led from Bihar for students and conscious families across India.</p>
+            <p><a href="https://wa.me/919279231459?text=Hi%20Sunita%2C%20I%20want%20to%20join%20the%20Kalpataru%20Mindset%20Transformation%20Program%20seminar.%20Please%20share%20the%20details." target="_blank" rel="noopener noreferrer">Connect on WhatsApp</a></p>
+          </div>
+          <p class="microcopy">After submitting the form, you will receive the next steps and WhatsApp community details for seminar updates.</p>
+        </div>
+
+        <div class="form-panel reveal">
+          <div class="booking-card">
+            <h3>Claim Your Free Seminar Slot</h3>
+            <p>Seats are limited because this is a focused transformation experience for serious students and conscious parents. Complete the form now to reserve your place.</p>
+            <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">&copy; 2026 Shakti Awakens. Kalpataru Mindset Transformation Program.</div>
+    </footer>
+
+    <div class="form-modal" aria-hidden="true">
+      <div class="form-dialog" role="dialog" aria-modal="true" aria-labelledby="booking-form-title">
+        <div class="form-modal-head">
+          <h3 id="booking-form-title">Claim Your Free Seminar Slot</h3>
+          <button class="form-close" type="button" aria-label="Close booking form">&times;</button>
+        </div>
+        <iframe
+          class="google-form"
+          title="Kalpataru seminar registration form"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform?embedded=true"
+          width="640"
+          height="3227"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >Loading...</iframe>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const formModal = document.querySelector(".form-modal");
+      const formClose = document.querySelector(".form-close");
+      const formButtons = Array.from(document.querySelectorAll(".js-open-form"));
+      let activeFormButton = null;
+
+      function openForm(event) {
+        if (event) event.preventDefault();
+        activeFormButton = event ? event.currentTarget : null;
+        document.body.classList.add("form-open");
+        formModal.classList.add("open");
+        formModal.setAttribute("aria-hidden", "false");
+        formClose.focus();
+      }
+
+      function closeForm() {
+        document.body.classList.remove("form-open");
+        formModal.classList.remove("open");
+        formModal.setAttribute("aria-hidden", "true");
+        if (activeFormButton) activeFormButton.focus();
+      }
+
+      formButtons.forEach(function (button) {
+        button.addEventListener("click", openForm);
+      });
+
+      formClose.addEventListener("click", closeForm);
+
+      formModal.addEventListener("click", function (event) {
+        if (event.target === formModal) closeForm();
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && formModal.classList.contains("open")) {
+          closeForm();
+        }
+      });
+
+      const revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      document.querySelectorAll(".reveal").forEach(function (element) {
+        revealObserver.observe(element);
+      });
+
+    })();
+  </script>
+</body>
+</html>
