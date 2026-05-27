@@ -1240,7 +1240,7 @@
         <iframe
           class="google-form"
           title="Kalpataru seminar registration form"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform?embedded=true"
+          data-src="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform?embedded=true"
           width="640"
           height="3227"
           frameborder="0"
@@ -1255,12 +1255,18 @@
     (function () {
       const formModal = document.querySelector(".form-modal");
       const formClose = document.querySelector(".form-close");
+      const googleForm = document.querySelector(".google-form");
       const formButtons = Array.from(document.querySelectorAll(".js-open-form"));
       let activeFormButton = null;
+      let googleFormHasLoaded = false;
 
       function openForm(event) {
         if (event) event.preventDefault();
         activeFormButton = event ? event.currentTarget : null;
+        if (!googleForm.getAttribute("src")) {
+          googleFormHasLoaded = false;
+          googleForm.setAttribute("src", googleForm.dataset.src);
+        }
         document.body.classList.add("form-open");
         formModal.classList.add("open");
         formModal.setAttribute("aria-hidden", "false");
@@ -1279,6 +1285,17 @@
       });
 
       formClose.addEventListener("click", closeForm);
+
+      googleForm.addEventListener("load", function () {
+        if (!googleFormHasLoaded) {
+          googleFormHasLoaded = true;
+          return;
+        }
+
+        if (formModal.classList.contains("open")) {
+          window.location.href = "thank-you.html";
+        }
+      });
 
       formModal.addEventListener("click", function (event) {
         if (event.target === formModal) closeForm();
