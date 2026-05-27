@@ -61,6 +61,13 @@
       text-align: center;
     }
 
+    .thank-you-logo {
+      width: clamp(130px, 22vw, 180px);
+      height: auto;
+      margin: 0 auto 22px;
+      object-fit: contain;
+    }
+
     .kicker {
       color: var(--champagne-dark);
       font-size: 13px;
@@ -133,6 +140,7 @@
 <body>
   <main class="thank-you-page">
     <section class="thank-you-card" aria-labelledby="thank-you-title">
+      <img class="thank-you-logo" src="logo.jpg" alt="Awaken Your Shakti with Sunita" />
       <div class="kicker">Registration received</div>
       <h1 id="thank-you-title">Thank you for joining <span class="gradient-text">Kalpataru.</span></h1>
       <p>Your form has been submitted. You will be redirected to the WhatsApp group in a few seconds for seminar updates and next steps.</p>

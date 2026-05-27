@@ -75,6 +75,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
       min-height: 52px;
       padding: 0 28px;
       border-radius: 999px;
@@ -91,8 +92,35 @@
 
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, #1f1a13, #090807);
-      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.16);
+      border-color: rgba(255, 255, 255, 0.18);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(135deg, #c8912d 0%, #8f6420 42%, #17130e 100%);
+      box-shadow: 0 18px 38px rgba(145, 96, 26, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::after {
+      content: "→";
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      font-size: 16px;
+      line-height: 1;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 22px 48px rgba(145, 96, 26, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+    }
+
+    .btn-primary:hover::after {
+      transform: translateX(3px);
+      background: rgba(255, 255, 255, 0.24);
     }
 
     .btn-secondary {
@@ -123,6 +151,13 @@
 
     .hero-content {
       text-align: center;
+    }
+
+    .hero-logo {
+      width: clamp(132px, 15vw, 180px);
+      height: auto;
+      margin: 0 auto 22px;
+      object-fit: contain;
     }
 
     h1,
@@ -162,7 +197,15 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 12px;
+    }
+
+    .cta-support {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0 auto 34px;
+      max-width: 520px;
     }
 
     .visual {
@@ -413,8 +456,9 @@
     }
 
     .coach-grid {
-      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+      grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1fr);
       align-items: center;
+      gap: 28px;
     }
 
     .coach-photo {
@@ -435,14 +479,13 @@
 
     .recognition-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
+      grid-template-columns: 1fr;
+      gap: 16px;
       align-items: stretch;
-      margin-bottom: 22px;
     }
 
     .recognition-photo {
-      min-height: 360px;
+      height: 390px;
       border: 8px solid #fff;
       border-radius: 12px;
       overflow: hidden;
@@ -457,7 +500,7 @@
     }
 
     .recognition-person img {
-      object-position: center;
+      object-position: center top;
     }
 
     .awards-showcase {
@@ -468,18 +511,18 @@
       box-shadow: var(--shadow);
       display: grid;
       align-content: center;
-      min-height: 360px;
+      min-height: 250px;
     }
 
     .awards-head {
-      padding: 22px 24px 10px;
+      padding: 20px 24px 8px;
       text-align: center;
     }
 
     .awards-head h3 {
       color: var(--ink);
-      font-size: 27px;
-      margin-bottom: 8px;
+      font-size: 24px;
+      margin-bottom: 6px;
     }
 
     .awards-head p {
@@ -490,7 +533,7 @@
 
     .awards-carousel {
       overflow: hidden;
-      padding: 14px 0 24px;
+      padding: 10px 0 22px;
     }
 
     .awards-track {
@@ -505,8 +548,8 @@
     }
 
     .award-slide {
-      width: 210px;
-      height: 250px;
+      width: 170px;
+      height: 190px;
       flex: 0 0 auto;
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -680,6 +723,46 @@
       margin-inline: auto;
     }
 
+    .cta-band .cta-support {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .booking-card .cta-support {
+      font-size: 14px;
+      margin: 14px auto 0;
+    }
+
+    .direct-form-section {
+      padding-top: 0;
+    }
+
+    .direct-form-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .direct-form-head {
+      padding: 30px 30px 18px;
+      text-align: center;
+    }
+
+    .direct-form-head h2 {
+      color: var(--ink);
+      font-size: clamp(30px, 4vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .direct-form-head p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
@@ -808,6 +891,11 @@
       background: #fff;
     }
 
+    .direct-google-form {
+      height: 1600px;
+      min-height: 900px;
+    }
+
     .footer {
       border-top: 1px solid var(--line);
       padding: 30px 0;
@@ -876,16 +964,45 @@
       }
 
       .hero {
-        padding-top: 112px;
+        padding: 42px 0 58px;
+      }
+
+      .hero-grid {
+        gap: 26px;
+      }
+
+      .hero-logo {
+        width: 118px;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        font-size: clamp(36px, 11vw, 46px);
+        line-height: 1.06;
+        margin-bottom: 16px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+        line-height: 1.58;
+        margin-bottom: 22px;
       }
 
       .hero-actions {
         display: grid;
         grid-template-columns: 1fr;
+        margin-bottom: 10px;
+      }
+
+      .cta-support {
+        font-size: 13px;
+        margin-bottom: 26px;
       }
 
       .btn {
         width: 100%;
+        min-height: 56px;
+        padding-inline: 20px;
       }
 
       .services-grid,
@@ -900,18 +1017,22 @@
         display: block;
       }
 
+      .section {
+        padding: 64px 0;
+      }
+
       .visual {
         min-height: 0;
       }
 
       .hero-photo {
         width: min(100%, 390px);
-        height: 500px;
+        height: min(112vw, 450px);
       }
 
       .hero-visual-frame {
-        min-height: 760px;
-        padding: 0 0 250px;
+        min-height: 0;
+        padding: 0 0 210px;
       }
 
       .student-shot {
@@ -959,7 +1080,7 @@
       }
 
       .recognition-photo {
-        min-height: 300px;
+        height: 360px;
       }
 
       .award-slide {
@@ -971,6 +1092,14 @@
       .contact-panel,
       .form-panel {
         padding: 24px;
+      }
+
+      .cta-band {
+        gap: 16px;
+      }
+
+      .direct-form-head {
+        padding: 24px 20px 16px;
       }
 
       .form-modal {
@@ -985,6 +1114,11 @@
         height: calc(100vh - 114px);
         min-height: 460px;
       }
+
+      .direct-google-form {
+        height: 1800px;
+        min-height: 900px;
+      }
     }
   </style>
 </head>
@@ -993,6 +1127,7 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-content reveal">
+          <img class="hero-logo" src="logo.jpg" alt="Awaken Your Shakti with Sunita" />
           <h1>Build focus, confidence, and discipline with <span class="gradient-text">Kalpataru.</span></h1>
           <p class="hero-copy">
             A mindset transformation program for students struggling with screen addiction, exam anxiety, low confidence,
@@ -1001,6 +1136,7 @@
           <div class="hero-actions">
             <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
           </div>
+          <p class="cta-support">Secure your free seminar seat today and take the first step toward focus, confidence, and discipline.</p>
         </div>
 
         <div class="visual reveal">
@@ -1200,6 +1336,29 @@
             <p>Fill the Google Form to claim your free seminar slot and receive details for the exclusive WhatsApp community.</p>
           </div>
           <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
+          <p class="cta-support">After submitting, you will be taken to the WhatsApp group for seminar updates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section direct-form-section" id="direct-form">
+      <div class="container">
+        <div class="direct-form-panel reveal">
+          <div class="direct-form-head">
+            <div class="section-kicker">Direct registration form</div>
+            <h2>Fill the form here</h2>
+            <p>Complete your registration below. Once submitted, you will be redirected to the WhatsApp group.</p>
+          </div>
+          <iframe
+            class="google-form direct-google-form"
+            title="Kalpataru seminar direct registration form"
+            data-src="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform?embedded=true"
+            width="640"
+            height="3227"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+          >Loading...</iframe>
         </div>
       </div>
     </section>
@@ -1222,6 +1381,7 @@
             <h3>Claim Your Free Seminar Slot</h3>
             <p>Seats are limited because this is a focused transformation experience for serious students and conscious parents. Complete the form now to reserve your place.</p>
             <a class="btn btn-primary js-open-form" href="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform" target="_blank" rel="noopener noreferrer">Register Now and Secure Your Seat!</a>
+            <p class="cta-support">Quick registration. WhatsApp group access opens after submission.</p>
           </div>
         </div>
       </div>
@@ -1238,7 +1398,7 @@
           <button class="form-close" type="button" aria-label="Close booking form">&times;</button>
         </div>
         <iframe
-          class="google-form"
+          class="google-form modal-google-form"
           title="Kalpataru seminar registration form"
           data-src="https://docs.google.com/forms/d/e/1FAIpQLSelwZF2YzEqBFa0my1SAT6Q8GEK3EdrFkM2FF8uWW0aOXfHwg/viewform?embedded=true"
           width="640"
@@ -1255,18 +1415,55 @@
     (function () {
       const formModal = document.querySelector(".form-modal");
       const formClose = document.querySelector(".form-close");
-      const googleForm = document.querySelector(".google-form");
+      const modalGoogleForm = document.querySelector(".modal-google-form");
+      const directGoogleForm = document.querySelector(".direct-google-form");
+      const directFormSection = document.querySelector("#direct-form");
       const formButtons = Array.from(document.querySelectorAll(".js-open-form"));
       let activeFormButton = null;
-      let googleFormHasLoaded = false;
+
+      function prepareFormRedirect(iframe, shouldRedirect) {
+        let formHasLoaded = false;
+        let firstLoadAt = 0;
+
+        iframe.addEventListener("load", function () {
+          if (!formHasLoaded) {
+            formHasLoaded = true;
+            firstLoadAt = Date.now();
+            return;
+          }
+
+          if (Date.now() - firstLoadAt > 3000 && shouldRedirect()) {
+            window.location.href = "thank-you.html";
+          }
+        });
+
+        return function loadForm() {
+          if (!iframe.getAttribute("src")) {
+            formHasLoaded = false;
+            iframe.setAttribute("src", iframe.dataset.src);
+          }
+        };
+      }
+
+      const loadModalForm = prepareFormRedirect(modalGoogleForm, function () {
+        return formModal.classList.contains("open");
+      });
+
+      const loadDirectForm = prepareFormRedirect(directGoogleForm, function () {
+        return true;
+      });
 
       function openForm(event) {
         if (event) event.preventDefault();
         activeFormButton = event ? event.currentTarget : null;
-        if (!googleForm.getAttribute("src")) {
-          googleFormHasLoaded = false;
-          googleForm.setAttribute("src", googleForm.dataset.src);
+
+        if (window.matchMedia("(max-width: 640px)").matches) {
+          loadDirectForm();
+          directFormSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
         }
+
+        loadModalForm();
         document.body.classList.add("form-open");
         formModal.classList.add("open");
         formModal.setAttribute("aria-hidden", "false");
@@ -1285,17 +1482,6 @@
       });
 
       formClose.addEventListener("click", closeForm);
-
-      googleForm.addEventListener("load", function () {
-        if (!googleFormHasLoaded) {
-          googleFormHasLoaded = true;
-          return;
-        }
-
-        if (formModal.classList.contains("open")) {
-          window.location.href = "thank-you.html";
-        }
-      });
 
       formModal.addEventListener("click", function (event) {
         if (event.target === formModal) closeForm();
@@ -1322,6 +1508,8 @@
       document.querySelectorAll(".reveal").forEach(function (element) {
         revealObserver.observe(element);
       });
+
+      loadDirectForm();
 
     })();
   </script>
